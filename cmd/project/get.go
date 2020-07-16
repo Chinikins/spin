@@ -58,8 +58,10 @@ func getProject(cmd *cobra.Command, options *getOptions, args []string) error {
 	if err != nil {
 		return err
 	}
-
+	fmt.Println(projectName)
 	project, resp, err := options.GateClient.ProjectControllerApi.AllPipelinesForProjectUsingGET(options.GateClient.Context, projectName, map[string]interface{}{"expand": options.expand})
+	fmt.Println(project)
+	fmt.Println(resp)
 	if resp != nil {
 		if resp.StatusCode == http.StatusNotFound {
 			return fmt.Errorf("Project '%s' not found\n", projectName)
@@ -71,6 +73,7 @@ func getProject(cmd *cobra.Command, options *getOptions, args []string) error {
 	if err != nil {
 		return err
 	}
+	fmt.Println(project)
 	options.Ui.JsonOutput(project)
 
 	return nil
