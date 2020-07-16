@@ -1,0 +1,15 @@
+{
+   "project":{
+      "name":"example project",
+      "email":"sre@cloudera.com",
+      "config":{
+         "pipelineConfigs":[
+         ],
+         "applications":[
+         ],
+         "clusters":[
+
+         ]
+      }
+   }
+}
